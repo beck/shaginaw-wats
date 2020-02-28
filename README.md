@@ -25,3 +25,31 @@ psql=> select from generate_series(1,1000);
 --
 (1000 rows)
 ```
+
+## Python
+
+_2020-02-27_
+
+```py
+>>> class Whoa:
+...   def __hash__(self):
+...     return -1
+...
+>>> hash(Whoa())
+-2
+```
+
+<details>
+  <summary>TIL</summary>
+
+```py
+>>> hash(-1) == hash(-2)
+True
+```
+
+Some lovely branching logic:<br>
+https://github.com/python/cpython/blob/master/Objects/typeobject.c#L6556
+
+[Stack Overflow](https://stackoverflow.com/questions/10130454/why-do-1-and-2-both-hash-to-2-in-cpython)
+
+</details>
