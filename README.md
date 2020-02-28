@@ -58,6 +58,22 @@ https://github.com/python/cpython/blob/master/Objects/typeobject.c#L6556
 
 _2020-02-25_
 
+fuuuuuuuuuuuuuuuuu
+
+```py
+>>> -8 ** (1/3)
+-2.0
+>>> x = -8
+>>> x ** (1/3)
+(1.0000000000000002+1.7320508075688772j)
+```
+
+uuuuuuuck this
+
+## Python
+
+_2020-02-25_
+
 `ᖍ(∙⟞∙)ᖌ`
 
 ```py
