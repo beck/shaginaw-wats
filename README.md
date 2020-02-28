@@ -1,2 +1,3 @@
-# shaginaw-wats
-Lovely snippets introduced to me by Brian Shaginaw
+# Shaginaw Wats
+
+Lovely snippets introduced to me by [Brian](https://github.com/orez-).
