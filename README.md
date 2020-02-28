@@ -53,3 +53,53 @@ https://github.com/python/cpython/blob/master/Objects/typeobject.c#L6556
 [Stack Overflow](https://stackoverflow.com/questions/10130454/why-do-1-and-2-both-hash-to-2-in-cpython)
 
 </details>
+
+## Python
+
+_2020-02-25_
+
+`ᖍ(∙⟞∙)ᖌ`
+
+```py
+>>> f"{True}"
+'True'
+>>> f"{'True':>5}"
+' True'
+>>> f"{True:>5}"
+'    1'
+```
+
+<details>
+  <summary>TIL</summary>
+
+`!s` and `!r` exist.
+
+> `!s` and `!r` are particularly tricky, because classes can hook into those and set their own behavior... which can be Bad
+
+```py
+>>> class Foo(int):
+...   def __repr__(self):
+...     return 'hey'
+...   def __str__(self):
+...     return 'yo'
+...
+>>> f"{Foo():>5}"
+'    0'
+>>> f"{Foo()!s:>5}"
+'   yo'
+>>> f"{Foo()!r:>5}"
+'  hey'
+```
+
+```py
+>>> f"{datetime.datetime.now():>5}"
+'>5'
+>>> f"{datetime.datetime.now():Today is %B %d, %Y}"
+'Today is February 25, 2020'
+>>> f"{datetime.datetime.now()!s:>30}"
+'    2020-02-25 13:31:05.721174'
+```
+
+<img src=https://user-images.githubusercontent.com/154988/75566375-8d560e00-5a1d-11ea-963c-618b012adae1.png alt="nothing to do here" width=35>
+
+</details>
