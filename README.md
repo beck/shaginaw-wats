@@ -2,6 +2,49 @@
 
 Lovely snippets introduced to me by [Brian](https://github.com/orez-).
 
+## Python kebab-case (2020-04-28)
+
+That `==` magic is 😈.
+
+This one is [Adam’s](https://github.com/adam410) fault.
+
+```python
+import collections
+​
+​
+class keyed_defaultdict(collections.defaultdict):
+    def __missing__(self, key):
+        return self.default_factory(key)
+
+
+class Kebabber:
+    def __init__(self, owner, key):
+        self._owner = owner
+        self._key = key
+​
+    def __sub__(self, meat):
+        return Kebabber(self._owner, f"{self._key}-{meat._key}")
+​
+    def __eq__(self, other):
+        setattr(self._owner, self._key, other)
+
+
+class KebabMeta(type):
+    @classmethod
+    def __prepare__(meta, class_name, supers):
+        # TODO: `meta` here sucks
+        return keyed_defaultdict(lambda key: Kebabber(meta, key))
+
+
+# ---
+
+class Foo(metaclass=KebabMeta):
+    kebab-case == 5
+
+
+print(getattr(Foo, 'kebab-case'))
+```
+
 ## SQL (2020-02-28)
 
 <img src=https://user-images.githubusercontent.com/154988/75563908-29314b00-5a19-11ea-80bc-90b054c0e17a.png alt="thonkings" width=35>
