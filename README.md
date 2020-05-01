@@ -10,30 +10,29 @@ This one is [Adam’s](https://github.com/adam410) fault.
 
 ```python
 import collections
-​
-​
+
+
 class keyed_defaultdict(collections.defaultdict):
     def __missing__(self, key):
-        return self.default_factory(key)
+        return self.default_factory(self, key)
 
 
 class Kebabber:
     def __init__(self, owner, key):
         self._owner = owner
         self._key = key
-​
+
     def __sub__(self, meat):
         return Kebabber(self._owner, f"{self._key}-{meat._key}")
-​
+
     def __eq__(self, other):
-        setattr(self._owner, self._key, other)
+        self._owner[self._key] = other
 
 
 class KebabMeta(type):
     @classmethod
     def __prepare__(meta, class_name, supers):
-        # TODO: `meta` here sucks
-        return keyed_defaultdict(lambda key: Kebabber(meta, key))
+        return keyed_defaultdict(Kebabber)
 
 
 # ---
