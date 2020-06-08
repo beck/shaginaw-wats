@@ -86,7 +86,7 @@ True
 ```
 
 Some lovely branching logic:<br>
-https://github.com/python/cpython/blob/master/Objects/typeobject.c#L6556
+https://github.com/python/cpython/blob/58ac700fb09497df14d4492b6f820109490b2b88/Objects/typeobject.c#L6553-L6555
 
 [Stack Overflow](https://stackoverflow.com/questions/10130454/why-do-1-and-2-both-hash-to-2-in-cpython)
 
