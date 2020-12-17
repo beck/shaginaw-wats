@@ -153,3 +153,41 @@ uuuuuuuck this
 <img src=https://user-images.githubusercontent.com/154988/75566375-8d560e00-5a1d-11ea-963c-618b012adae1.png alt="nothing to do here" width=35>
 
 </details>
+
+## Ruby (2020-07-14)
+```ruby
+irb(main):005:0> def oh no
+irb(main):006:1>   5
+irb(main):007:1> end
+=> :oh no
+irb(main):008:0> oh no
+=> 5
+```
+
+✨
+```ruby
+irb(main):009:0> def square root of num
+irb(main):010:1>   num ** 0.5
+irb(main):011:1> end
+=> :square root of
+irb(main):012:0> square root of 5
+=> 2.23606797749979
+```
+
+```ruby
+irb(main):013:0>  6 = 5
+=> 5
+irb(main):014:0>  6 * 6
+=> 25
+```
+
+```ruby
+irb(main):061:0* def def def def def def, def def def def
+irb(main):062:1>   return def def def if def def def def == 0
+irb(main):063:1>   return def def def def def-def def def def, def def def def if def def def > def def def def
+irb(main):064:1>   return def def def def def, def def def def-def def def
+irb(main):065:1> end
+=> :def def
+irb(main):066:0> def def 1280, 400
+=> 80
+```
